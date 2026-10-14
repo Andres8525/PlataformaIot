@@ -24,6 +24,9 @@
                 "input": "public"
               }
             ],
+            "allowedCommonJsDependencies": [
+              "leaflet"
+            ],
             "styles": [
               "src/styles.css"
             ]

@@ -1,5 +1,6 @@
 export type VehicleStatus = 'online' | 'offline';
 export type AlertSeverity = 'critical' | 'warning' | 'info';
+export type DashboardTheme = 'dark' | 'light';
 
 export interface VehicleTelemetry {
   id: string;
@@ -11,8 +12,6 @@ export interface VehicleTelemetry {
   temperature: number;
   latitude: number;
   longitude: number;
-  mapX: number;
-  mapY: number;
   updatedAt: Date;
 }
 

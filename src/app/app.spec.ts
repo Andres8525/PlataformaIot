@@ -18,8 +18,22 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('PanelIot');
-    expect(compiled.textContent).toContain('Vista general de la flota');
-    expect(compiled.textContent).toContain('Mapa de operaciones');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Monitoreo de flota');
+    expect(compiled.textContent).toContain('Ubicación de vehículos');
+    expect(compiled.textContent).toContain('Actividad reciente');
+  });
+
+  it('should switch between dark and light themes', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const app = fixture.componentInstance;
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(app.theme()).toBe('dark');
+    app.toggleTheme();
+    fixture.detectChanges();
+
+    expect(app.theme()).toBe('light');
+    expect(compiled.querySelector('main')?.classList.contains('theme-light')).toBe(true);
   });
 });
