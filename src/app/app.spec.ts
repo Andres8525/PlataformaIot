@@ -14,10 +14,12 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the fleet dashboard', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, PanelIot');
+    expect(compiled.querySelector('h1')?.textContent).toContain('PanelIot');
+    expect(compiled.textContent).toContain('Vista general de la flota');
+    expect(compiled.textContent).toContain('Mapa de operaciones');
   });
 });
